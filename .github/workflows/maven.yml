@@ -18,9 +18,9 @@ jobs:
       - name: Build with Maven package 2
         run: cd sample-folder && mvn -B test --file pom.xml
       - name: Upload coverage to Codecov
-          uses: codecov/codecov-action@v1
-          with:
-            token: ${{ secrets.CODECOV_TOKEN }}
-            flags: unittests
-            name: codecov-umbrella
-            fail_ci_if_error: true
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
