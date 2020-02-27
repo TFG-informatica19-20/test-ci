@@ -13,8 +13,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: Build with Maven package 1
+      - name: Test with Maven package 1
         run: mvn -B test --file pom.xml
+      - name: Test with Maven package 2
+          run:  cd sample-folder && mvn -B test --file pom.xml && cd ../
       - name: Upload coverage to Codecov package 1
         uses: codecov/codecov-action@v1
         with:
